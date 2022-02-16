@@ -1,0 +1,17 @@
+.formcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin-right: 2rem;
+  min-width: 5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: rgb(65, 98, 168);
+  border-radius: 1rem;
+  border: 2px solid rgb(65, 98, 168);
+  font-weight: bold;
+  cursor: pointer;
+}
