@@ -2,7 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
-import styles from '../../functionBased/components/InputTodo.module.css';
+import styles from './InputTodo.module.css';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
@@ -23,8 +23,6 @@ const InputTodo = (props) => {
       setInputText({
         title: '',
       });
-    } else {
-      alert('Please enter a todo');
     }
   };
 
@@ -32,14 +30,14 @@ const InputTodo = (props) => {
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.formcontainer}>
         <input
-          type='text'
+          type="text"
           className={styles.input}
-          placeholder='Add todo...'
+          placeholder="Add todo..."
           value={inputText.title}
-          name='title'
+          name="title"
           onChange={onChange}
         />
-        <button type='submit' className='input-submit'>
+        <button type="submit" className="input-submit">
           <FaPlusCircle />
         </button>
       </div>

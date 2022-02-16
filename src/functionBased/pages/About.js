@@ -6,8 +6,8 @@ const About = () => {
   const { url, path } = useRouteMatch();
 
   return (
-    <div className='about__content'>
-      <ul className='about__list'>
+    <div className="about__content">
+      <ul className="about__list">
         <li>
           <Link to={`${url}/about-app`}>About App</Link>
         </li>

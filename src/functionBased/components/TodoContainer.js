@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import InputTodo from './InputTodo';
-import TodoList from '../components/TodosList';
+import TodoList from './TodosList';
 import About from '../pages/About';
 import NoMatch from '../pages/NoMatch';
 import Navbar from './Navbar';
@@ -25,17 +25,15 @@ const TodoContainer = () => {
   }, [todos]);
 
   const handleChange = (id) => {
-    setTodos((prevState) =>
-      prevState.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-        return todo;
-      })
-    );
+    setTodos((prevState) => prevState.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    }));
   };
 
   const delTodo = (id) => {
@@ -58,7 +56,7 @@ const TodoContainer = () => {
           todo.title = updatedTitle;
         }
         return todo;
-      })
+      }),
     );
   };
 
@@ -66,9 +64,9 @@ const TodoContainer = () => {
     <>
       <Navbar />
       <Switch>
-        <Route exact path='/'>
-          <div className='container'>
-            <div className='inner'>
+        <Route exact path="/">
+          <div className="container">
+            <div className="inner">
               <Header />
               <InputTodo addTodoProps={addTodoItem} />
               <TodoList
@@ -80,10 +78,10 @@ const TodoContainer = () => {
             </div>
           </div>
         </Route>
-        <Route path='/about'>
+        <Route path="/about">
           <About />
         </Route>
-        <Route path='*'>
+        <Route path="*">
           <NoMatch />
         </Route>
       </Switch>

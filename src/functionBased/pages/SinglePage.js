@@ -22,7 +22,7 @@ const SinglePage = () => {
   const { title, description } = aboutContent;
 
   return (
-    <div className='main__content'>
+    <div className="main__content">
       <h1>{title}</h1>
       <p>{description}</p>
     </div>
